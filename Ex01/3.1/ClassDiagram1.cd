@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Polymorphisme.GObject">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>polymorphism.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAABEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polymorphisme.Kreis">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>polymorphism.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polymorphisme.Rechteck">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>polymorphism.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Polymorphisme.Compound">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>polymorphism.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAwAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>
