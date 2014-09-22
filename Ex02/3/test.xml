@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CompletionCB">
+</Property><Property Name="Solution File" Value="C:\Daten\DatenHuser\DotNet\DotNetVorlesung\VorlesungsPlanung\Teil1C#\uebungen\Teil 2\Vorgaben\2.3\CompletionCB.sln">
+</Property><Property Name="Date" Value="Donnerstag, 11. September 2008">
+</Property><Property Name="Time" Value="11:53">
+</Property></Properties><Event ErrorLevel="0" Project="CompletionCB" Source="CompletionCB.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CompletionCB" Source="CompletionCB.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CompletionCB.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="CompletionCB.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CompletionCB" Source="CompletionCB.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
