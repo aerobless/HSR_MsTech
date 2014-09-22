@@ -6,7 +6,7 @@ using System.Diagnostics;
 // mit derselben Signatur wie die untenstehenden Funktionen 
 // CompareFraction bzw CompareString
 // delegate 
-public delegate void Comparer(object x, object y);
+delegate int Comparer(object x, object y);
 
 /// <summary>
 /// Einfacher Referenztyp für das Rechnen mit Bruechen 
@@ -54,7 +54,7 @@ class Program
         // compare muss genau eine Methode referenzieren (kein Multicast)
         // Sie koennen dazu die Methode Debug.Assert verwenden (siehe Help)
         // Debug.Assert ...
-        Debug.Assert
+        Debug.Assert(compare != null && compare.GetInvocationList().Length==1);
 
         // Selection sort
         for (int i = 0; i < a.Length - 1; i++)
@@ -76,6 +76,8 @@ class Program
         // TODO:
         // Sortieren Sie den Array a mit der Sort-Methode
         // Sort(...);
+        Comparer comparer = new Comparer(CompareFraction);
+        Sort(a, comparer);
 
         // Ausgabe des sortierten Arrays a
         foreach (Fraction f in a) Console.Write(f + " ");
@@ -84,6 +86,8 @@ class Program
         // TODO:
         // Sortieren Sie den Array b mit der Sort-Methode
         // Sort(...);
+        Comparer comparer2 = new Comparer(CompareString);
+        Sort(b, comparer2);
 
         // Ausgabe des sortierten Arrays b
         foreach (string s in b) Console.Write(s + " ");
