@@ -5,7 +5,7 @@ namespace CompletionCB
 {
 
 	//Testclient
-	class FileReaderApp: IFileReaderClient 
+	class FileReaderApp
 	{ 
 		protected AFileReader reader = new AFileReader();
 		public void ReadCompleted(String filename, byte[] data) 
@@ -19,14 +19,14 @@ namespace CompletionCB
 		}
 		public void actionRequiringFile(String filename) 
 		{
-			reader.ReadAsync(filename, this);
+            reader.ReadAsync(filename, ReadCompleted, ReadFailed);
 		}
 		public void actionRequiring2Files(String filename1, String filename2) 
 		{
-			
-			reader.ReadAsync(filename1, this);
-			
-			reader.ReadAsync(filename2, this);
+
+            reader.ReadAsync(filename1, ReadCompleted, ReadFailed);
+
+            reader.ReadAsync(filename2, ReadCompleted, ReadFailed);
 			
 			
 		}
