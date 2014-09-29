@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace HSRCounter
 {
+    public delegate void CounterEventHandler(Counter c, CounterEventArgs arg);
     public class Counter
     {
         //TODO: event type:
         private event EventHandler countValueChanged;
         private int count;
+        public event CounterEventHandler CountValueChanged;
+        private int p;
 
-        Counter()
+        public Counter()
         {
             count = 0;
         }
-        Counter(int val)
+        public Counter(int val)
         {
             count = val;
         }
@@ -37,10 +40,19 @@ namespace HSRCounter
         {
             Count = val;
         }
+
+        private void Notify(object sender, EventArgs e){
+            if(CountValueChanged != null){
+                CountValueChanged(this, null);
+            }
+        }
+
         public int Count
         {
             get{return count;}
-            set { count = value;}
+            set { count = value;
+                  Notify(this, null);
+            }
         }
     }
 }

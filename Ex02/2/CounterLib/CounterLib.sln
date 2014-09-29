@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterLib", "CounterLib\CounterLib.csproj", "{1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterClient", "CounterClient\CounterClient.csproj", "{1ED60971-1843-4102-9D49-2A18D6EBB852}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522} = {1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DE4820A-8734-4B7C-ADCC-5E3FC9AE8522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED60971-1843-4102-9D49-2A18D6EBB852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED60971-1843-4102-9D49-2A18D6EBB852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED60971-1843-4102-9D49-2A18D6EBB852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED60971-1843-4102-9D49-2A18D6EBB852}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
