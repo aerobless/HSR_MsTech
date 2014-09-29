@@ -8,7 +8,10 @@ namespace HSRCounter
 {
     public class Counter
     {
+        //TODO: event type:
+        private event EventHandler countValueChanged;
         private int count;
+
         Counter()
         {
             count = 0;
@@ -37,7 +40,7 @@ namespace HSRCounter
         public int Count
         {
             get{return count;}
-            set{count=value;}
+            set { count = value;}
         }
     }
 }
