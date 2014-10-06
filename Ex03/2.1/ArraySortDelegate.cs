@@ -5,7 +5,7 @@ using System.Diagnostics;
 // mit derselben Signatur wie die untenstehenden Funktionen 
 // CompareFraction bzw CompareString
 //
-delegate int Comparer(object x, object y);
+delegate int Comparer<T>(T x, T y);
 
 /// <summary>
 /// einfacher Referenztyp für das Rechnen mit Bruechen 
@@ -23,10 +23,10 @@ class Test
 	//statische Methode zum Vergleichen zweier Brueche x und y
 	// Resultat 0: x = y; Resultat -1: x < y; Resultat +1: x > y
 	//Signatur muss mit Delegate Comparer übereinstimmen
-	static int CompareFraction(object x, object y) 
+	static int CompareFraction(Fraction x, Fraction y) 
 	{
-		Fraction f1 = (Fraction)x;
-		Fraction f2 = (Fraction)y;
+		Fraction f1 = x;
+		Fraction f2 = y;
 		float fract1 = (float)f1.a / f1.b;
 		float fract2 = (float)f2.a / f2.b;
 		if (fract1 < fract2) return -1;
@@ -37,15 +37,15 @@ class Test
 	//statische Methode zum Vergleichen zweier strings x und y
 	// Resultat 0: x = y; Resultat -1: x < y; Resultat +1: x > y
 	//Signatur muss mit Delegate Comparer übereinstimmen
-	static int CompareString(object x, object y) 
+	static int CompareString(String x, String y) 
 	{
-		return ((string)x).CompareTo(y);
+		return x.CompareTo(y);
 	}
 
 	//Generische Sort-Methode zum Sortieren von beliebigen Arrays a
 	//compare ist eine Delegate-Instanz und enthaelt die Referenz (=Funktionszeiger)
 	//auf eine Compare-Funktion fuer den aktuellen Elementtyp des Arrays
-	static void Sort(object[] a, Comparer compare) 
+	static void Sort<T>(T[] a, Comparer<T> compare) 
 	{
 
 //		Ueberpruefen Sie folgende Vorbedingung
@@ -62,7 +62,7 @@ class Test
 			{
 				if (compare(a[j], a[min]) < 0) min = j;
 			}
-			if (min != i) { object x = a[i]; a[i] = a[min]; a[min] = x; }
+			if (min != i) { T x = a[i]; a[i] = a[min]; a[min] = x; }
 		}
 	}
   
@@ -72,14 +72,14 @@ class Test
 		string[] b = {"pears", "apples", "oranges", "bananas", "plums"};
 
 //		Sortieren Sie den Array a mit der Sort-Methode
-		Sort(a, new Comparer(CompareFraction));
+		Sort(a, new Comparer<Fraction>(CompareFraction));
 
 		//Ausgabe des sortierten Arrays a
 		foreach (Fraction f in a) Console.Write(f + " ");
 		Console.WriteLine();
 
 //		Sortieren Sie den Array b mit der Sort-Methode
-		Sort(b, new Comparer(CompareString));
+		Sort(b, new Comparer<String>(CompareString));
 		
 
 		//Ausgabe des sortierten Arrays b
