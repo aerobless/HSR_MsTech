@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 // Definieren Sie einen Delegate-Typ Comparer
@@ -80,12 +81,21 @@ class Test
 
 //		Sortieren Sie den Array b mit der Sort-Methode
 		Sort(b, new Comparer<String>(CompareString));
-		
 
 		//Ausgabe des sortierten Arrays b
 		foreach (string s in b) Console.Write(s + " ");
 		Console.WriteLine();
-		
+
+        //Exercise 2.2
+        List<Fraction> fracList = new List<Fraction>(a);
+        fracList.Sort(CompareFraction);
+        fracList.ForEach(Console.WriteLine);
+
+        //Convert the Fraction List to a String List
+        List<String> someList = fracList.ConvertAll(i => i.ToString());
+        Console.Out.WriteLine(someList);
+
+		//End
 		Console.WriteLine("Press Enter to Exit");
 		Console.ReadLine();
 	}
