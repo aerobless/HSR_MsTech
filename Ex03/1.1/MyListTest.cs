@@ -5,7 +5,7 @@ using System.Text;
 public class Person : IComparable
 {
     string name;
-    int age;
+    public int age;
 
     public Person(string s, int i)
     {
@@ -33,7 +33,7 @@ class Test
 {
     static void Main(string[] args)
     {
-
+        //Exercise 1.1
         SortedList<Person> list = new SortedList<Person>();
         //Create name and age values to initialize Person objects.
         string[] names = new string[] { "Franscoise", "Bill", "Li", "Sandra", "Gunnar", "Alok", "Hiroyuki", "Maria", "Alessandro", "Raul" };
@@ -62,8 +62,43 @@ class Test
             Console.WriteLine(p.ToString());
         }
 
-        Console.WriteLine("Done: Press any key to exit");
+        Console.WriteLine("\n \nEXERCISE 1.2");
+
+        //Exercise 1.2
+        // ToDo: Definiere die typsichere Personen-Liste list
+        List<Person> list2 = new List<Person>();
+
+        //Create name and age values to initialize Person objects.
+        string[] names2 = new string[] { "Li", "Sandra", "Gunnar", "Alok", "Hiroyuki" };
+        int[] ages2 = new int[] { 28, 23, 18, 9, 108 };
+        //Populate the list.
+        for (int x = 0; x < names2.Length; x++)
+        {
+            list2.Add(new Person(names2[x], ages2[x]));
+        }
+        // ToDo: Sortiere die Liste nach dem Personennamen,
+        // Die Definition von Person darf nicht geändert werden
+        // Verwenden Sie dazu die statische Methode ComparePersonsByName
+        Console.WriteLine("\n---Part1---");
+        list2.Sort(ComparePersonsByName);
+        list2.ForEach(Console.WriteLine);
+
+        // ToDo: Geben Sie die Liste der Personen aus, deren Alter>=30 ist.
+        // Verwenden Sie dazu ausschliesslich List.FindAll und List.ForEach.
+        // Implementieren Sie den Vergleich als anonymes Delegate.
+        Console.WriteLine("\n---Part2---");
+        list2 = list2.FindAll(i => i.age>30);
+        list2.ForEach(Console.WriteLine);
+
+        Console.WriteLine("\nDone: Press any key to exit");
         Console.Read();
+    }
+
+    private static int ComparePersonsByName(Person p1, Person p2)
+    {
+        // ToDo: Implementieren Sie die benötigte Funktionalität.
+        // Reagieren Sie adäquat auf alle möglichen Fehlerfälle.
+        return p1.CompareTo(p2);
     }
 }
 
