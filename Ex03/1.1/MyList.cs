@@ -4,26 +4,26 @@ using System;
 using System.Collections;
 using System.Text;
 
-public class MyList : IEnumerable {
-    protected Node head;
-    protected Node current = null;
+public class MyList<T> : IEnumerable {
+    protected Node<T> head;
+    protected Node<T> current = null;
 
     
-    protected class Node {
-        public Node next;
+    protected class Node<T> {
+        public Node<T> next;
        
-        private object data;
+        private T data;
         
-        public Node(object t) {
+        public Node(T t) {
             next = null;
             data = t;
         }
-        public Node Next {
+        public Node<T> Next {
             get { return next; }
             set { next = value; }
         }
         
-        public object Data {
+        public T Data {
             get { return data; }
             set { data = value; }
         }
@@ -33,14 +33,14 @@ public class MyList : IEnumerable {
         head = null;
     }
 
-    public void Add(object t) {
-        Node n = new Node(t);
+    public void Add(T t) {
+        Node<T> n = new Node<T>(t);
         n.Next = head;
         head = n;
     }
 
     public IEnumerator GetEnumerator() {
-        Node curr = head;
+        Node<T> curr = head;
         while (curr != null) {
             yield return curr.Data;
             curr = curr.Next;
@@ -48,7 +48,7 @@ public class MyList : IEnumerable {
     }
 }
 
-public class SortedList : MyList {
+public class SortedList<T> : MyList<T> where T: IComparable {
     // A simple, unoptimized sort algorithm that 
     // orders list elements from lowest to highest:
     public void BubbleSort() {
@@ -56,8 +56,8 @@ public class SortedList : MyList {
             return;
         bool swapped;
         do {
-            Node previous = null;
-            Node curr = head;
+            Node<T> previous = null;
+            Node<T> curr = head;
             swapped = false;
             while (curr.next != null) {
                 IComparable comp = curr.Data as IComparable;
@@ -65,7 +65,7 @@ public class SortedList : MyList {
                     throw new Exception("data-object must implement ICOmparable");
 
                 if (comp.CompareTo(curr.next.Data) > 0) {
-                    Node tmp = curr.next;
+                    Node<T> tmp = curr.next;
                     curr.next = curr.next.next;
                     tmp.next = curr;
 
