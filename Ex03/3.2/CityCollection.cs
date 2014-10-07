@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class CityCollection
 {
     private string[] m_Cities = { "Bern", "Basel", "Genf" };
-    bool reverse = false;
 
     public IEnumerator GetEnumerator()
     {
@@ -15,20 +14,14 @@ public class CityCollection
         }
     }
 
-    public IEnumerator ReverseIEnum()
+    public IEnumerable Reverse()
     {
-        for (int i = m_Cities.GetLength(0); i > 0; i--)
+        for (int i = (m_Cities.GetLength(0)-1); i > -1; i--)
         {
             yield return m_Cities.GetValue(i);
         }
     }
 
-    //TODO: HERE
-    public IEnumerable<string> Reverse
-    {
-        get;
-        set;
-    }
 }
 class Test
 {
@@ -39,13 +32,14 @@ class Test
         {
             Console.WriteLine(s);
         }
+        Console.WriteLine("\nReverse Output:");
         //Ausgabe in umgekehrter Reihenfolge 
-        foreach (string s in myColl.Reverse)
+        foreach (string s in myColl.Reverse())
         {
             Console.WriteLine(s);
         }
         
-        Console.WriteLine("Press Enter to Exit");
+        Console.WriteLine("\nPress Enter to Exit");
         Console.ReadLine();
     }
 }
