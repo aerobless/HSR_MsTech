@@ -15,11 +15,12 @@ namespace LambdaExpressions1
             fruits.Add("apple", 1.00);
             fruits.Add("blueberry", 0.80);
 
-            var matches = /* to do */
+            //Select all fruits with name=banana or value < 2.0
+            var matches = fruits.FilterBy((name, value) => name.Equals("banana")||value<2.0);
             Console.WriteLine("Number of matches: {0}", matches.Count);
 
-            Console.WriteLine("Sum of matches: {0}", /* to do */);
-            Console.WriteLine("Names of matches: {0}", /* to do */);
+            Console.WriteLine("Sum of matches: {0}", matches.Sum(c => c.Value));
+            Console.WriteLine("Names of matches: {0}", matches.Aggregate("Fruits:", (c, s) => c +" "+ s.Key));
 
             Console.WriteLine("Press key to exit");
             Console.ReadKey();

@@ -57,7 +57,6 @@ namespace ExtensionMethods
             object[] objs = { 1, "Burke", true, "Everett", 7.9, "Albert" };
             IEnumerable<string> query1 = objs.HSROfType<string>();
             query1.HSRForEach(s => Console.WriteLine(s));
-
         }
         
         private static void TestAggregateSum()
