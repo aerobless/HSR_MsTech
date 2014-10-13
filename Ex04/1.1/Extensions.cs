@@ -6,8 +6,13 @@ namespace ExtensionMethods
 {
     public static class Extensions
     {
-        //CamelCase hier als Extension-Method implementieren (Funktionalität für das Casing ist in "ToCamelCaseInternal" enthalten).
-        //
+        /*
+         * Extension method has to meet the following criteria:
+         * 1. static class
+         * 2. static method
+         * 3. first param must be declared with "this" and must denote the class, to which the
+         *    method should be added.
+         */
         public static string CamelCase(this string s)
         {
             return ToCamelCaseInternal(s);
