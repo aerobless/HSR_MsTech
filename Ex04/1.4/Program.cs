@@ -10,6 +10,10 @@ namespace ExtensionMethods
         {
             Console.WriteLine("TestWhere");
             TestWhere();
+
+            Console.WriteLine("\nTestWhereLINQ Query Expression");
+            TestWhereQueryLinq();
+
             Console.WriteLine("\nTestOfType");
             TestOfType();
             
@@ -27,13 +31,26 @@ namespace ExtensionMethods
             //However, what makes extension methods unique is that they can also be invoked using instance syntax:
             IEnumerable<string> query1 = names.HSRWhere(s => s.Length < 6);
             query1.HSRForEach(s => Console.WriteLine(s));
+            Console.Out.WriteLine("\n");
             //oder
             names.HSRWhere(s => s.Length < 6)
                  .HSRForEach(s => Console.WriteLine(s));
+
+            Console.Out.WriteLine("\n");
             //oder eager
             names.HSRWhere(s => s.Length < 6)
                 .ToList()
                 .HSRForEach(s => Console.WriteLine(s));
+        }
+
+        private static void TestWhereQueryLinq()
+        {
+            string[] names = { "1234567", "Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David" };
+            IEnumerable<string> query1 =
+                from item in names
+                where item.Length < 6
+                select item;
+            query1.HSRForEach(s => Console.WriteLine(s));
         }
         private static void TestOfType()
         {
