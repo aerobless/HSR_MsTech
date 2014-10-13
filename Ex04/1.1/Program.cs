@@ -14,6 +14,8 @@ namespace ExtensionMethods
 
             foreach (string s in identifiers)
                 Console.WriteLine("{0} becomes: {1}", s, Extensions.CamelCase(s));
+
+            //Calling a extension method example:
             foreach (string s in identifiers)
                 Console.WriteLine("{0} becomes: {1}", s, s.CamelCase());
 
