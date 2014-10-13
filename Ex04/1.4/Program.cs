@@ -10,17 +10,18 @@ namespace ExtensionMethods
         {
             Console.WriteLine("TestWhere");
             TestWhere();
-            Console.WriteLine("TestOfType");
+            Console.WriteLine("\nTestOfType");
             TestOfType();
-            Console.WriteLine("TestAggregateSum");
+            
+            Console.WriteLine("\nTestAggregateSum");
             TestAggregateSum();
-
+            
             Console.ReadLine();
         }
         
         private static void TestWhere()
         {
-            string[] names = { "Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David" };
+            string[] names = { "1234567","Burke", "Connor", "Frank", "Everett", "Albert", "George", "Harris", "David" };
 
             IEnumerable<string> query = Extensions.HSRWhere(names, s => s.Length < 6);
             //However, what makes extension methods unique is that they can also be invoked using instance syntax:
@@ -34,7 +35,6 @@ namespace ExtensionMethods
                 .ToList()
                 .HSRForEach(s => Console.WriteLine(s));
         }
-
         private static void TestOfType()
         {
             object[] objs = { 1, "Burke", true, "Everett", 7.9, "Albert" };
@@ -42,20 +42,23 @@ namespace ExtensionMethods
             query1.HSRForEach(s => Console.WriteLine(s));
 
         }
-
+        
         private static void TestAggregateSum()
         {
             string[] names = { "Albert", "Burke", "Connor", "David", "Everett", "Frank", "George", "Harris"};
 
             int count = names.HSRAggregate(0, (c, s) => c + s.Length);
+            Console.Out.WriteLine(count);
             // count == 46
 
             count = names.HSRSum(c => c.Length);
+            Console.Out.WriteLine(count);
             //und jetzt mit Ling Namespace
             count = names.Aggregate(0, (c, s) => c + s.Length);
+            Console.Out.WriteLine(count);
             // count == 46
-
             count = names.Sum(c => c.Length);
+            Console.Out.WriteLine(count);
         }
     }
 }
