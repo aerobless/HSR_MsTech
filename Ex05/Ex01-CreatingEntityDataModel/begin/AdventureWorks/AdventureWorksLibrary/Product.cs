@@ -33,5 +33,6 @@ namespace AdventureWorksLibrary
         public System.DateTime ModifiedDate { get; set; }
     
         public virtual Category ProductCategory { get; set; }
+        public virtual Model ProductModel { get; set; }
     }
 }
