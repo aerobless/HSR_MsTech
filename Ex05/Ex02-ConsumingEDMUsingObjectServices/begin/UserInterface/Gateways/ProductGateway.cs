@@ -47,6 +47,7 @@ namespace UserInterface.Gateways
 
         public void RefreshProduct(Product product)
         {
+            context.Entry(product).Reload();
         }
 
         public IList<Category> GetCategories()
@@ -68,14 +69,20 @@ namespace UserInterface.Gateways
 
         public void DeleteProduct(Product product)
         {
+            context.Products.Remove(product);
+            context.SaveChanges();
         }
 
         public void UpdateProduct()
         {
+            context.SaveChanges();
         }
 
         public void AddProduct(Product product)
         {
+            product.rowguid = Guid.NewGuid();
+            context.Products.Add(product);
+            context.SaveChanges();
         }
     }
 }
