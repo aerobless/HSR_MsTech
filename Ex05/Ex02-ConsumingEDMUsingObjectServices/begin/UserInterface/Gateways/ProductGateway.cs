@@ -34,7 +34,15 @@ namespace UserInterface.Gateways
 
         public IList<Product> GetProducts(string productName, Category category, Model model)
         {
-            return null;
+            var products = from p in context.Products
+                           where p.ProductCategory.CategoryID == category.CategoryID &&
+                           p.ProductModel.ModelID == model.ModelID
+                           select p;
+            if (!string.IsNullOrEmpty(productName))
+            {
+                products = products.Where(p => p.Name.Contains(productName));
+            }
+            return products.ToList();
         }
 
         public void RefreshProduct(Product product)
@@ -43,12 +51,19 @@ namespace UserInterface.Gateways
 
         public IList<Category> GetCategories()
         {
-            return null;
+            var categories = from c in context.Categories
+                             where c.ParentCategory.Name != null
+                             orderby c.Name
+                             select c;
+            return categories.ToList();
         }
 
         public IList<Model> GetModels()
         {
-            return null;
+            var models = from m in context.Models
+                         orderby m.Name
+                         select m;
+            return models.ToList();
         }
 
         public void DeleteProduct(Product product)
