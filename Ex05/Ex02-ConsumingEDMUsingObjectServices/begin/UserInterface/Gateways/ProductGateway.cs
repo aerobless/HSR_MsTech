@@ -25,8 +25,11 @@ namespace UserInterface.Gateways
 
     public class ProductGateway : IProductGateway
     {
+        private AdventureWorksLTEntities context;
+
         public ProductGateway()
         {
+            context = new AdventureWorksLTEntities();
         }
 
         public IList<Product> GetProducts(string productName, Category category, Model model)
