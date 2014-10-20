@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Temp\5 EntityFramework60\Ex04-TablePerHierarchyInstance\begin\AdventureWorksLibrary\AdventureWorksModel.edmx'. 
+﻿// T4 code generation is enabled for model 'Z:\git\MsTech\Ex05\Ex04-TablePerHierarchyInstance\begin\AdventureWorksLibrary\AdventureWorksModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
