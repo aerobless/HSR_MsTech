@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CounterImpl.cs" />
     <Compile Include="ICounter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
