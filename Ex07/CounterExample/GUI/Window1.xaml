@@ -1,13 +1,31 @@
 ﻿<Window x:Class="GUI.Window1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Window1" Height="300" Width="300" WindowStyle="None">
-    <StackPanel Margin="10">
+    Title="Window1" Height="215.058" Width="315.079" WindowStyle="None">
+    <StackPanel Margin="10,10,10,15.53">
         <Border BorderBrush="Black" Background="LightBlue" BorderThickness="1" CornerRadius="10">
             <Label FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" >WPF Counter Application</Label>
+
         </Border>
+        <StackPanel Height="145.751" Margin="1, 40" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="17.15"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <StackPanel Height="31.142" Orientation="Horizontal">
+                <TextBox Height="23" TextWrapping="Wrap" Text="0" Margin="0,4.081,0,4.08" Width="163.351"/>
+                <Button Content="--" Width="30" RenderTransformOrigin="0.5,0.5" Margin="2" Click="button_decrement"/>
+                <Button Content="++" Width="30" RenderTransformOrigin="0.5,0.5" Margin="2" Click="Button_Click"/>
+                <Button Content="0" Width="30" RenderTransformOrigin="0.5,0.5" Margin="2" Click="Button_Click_1"/>
+            </StackPanel>
+            <Button Content="Close" Margin="2" Click="Close" />
+        </StackPanel>
 
         <!-- Counter GUI Controls -->
-        
+
     </StackPanel>
 </Window>
