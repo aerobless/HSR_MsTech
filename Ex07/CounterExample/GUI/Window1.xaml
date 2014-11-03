@@ -1,0 +1,13 @@
+﻿<Window x:Class="GUI.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300" WindowStyle="None">
+    <StackPanel Margin="10">
+        <Border BorderBrush="Black" Background="LightBlue" BorderThickness="1" CornerRadius="10">
+            <Label FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" >WPF Counter Application</Label>
+        </Border>
+
+        <!-- Counter GUI Controls -->
+        
+    </StackPanel>
+</Window>

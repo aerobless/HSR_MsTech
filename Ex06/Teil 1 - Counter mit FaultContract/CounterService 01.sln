@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterServiceCommon", "CounterServiceCommon\CounterServiceCommon.csproj", "{739BC912-0E25-4A53-844B-7865BEE50154}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterServiceHost", "CounterServiceHost\CounterServiceHost.csproj", "{BB642323-E560-4213-B9D8-29FED12CB71F}"
@@ -12,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterClientWinFormsServiceReference", "CounterClientWinFormsServiceReference\CounterClientWinFormsServiceReference.csproj", "{95575622-8533-4C84-AD06-4B4B9091A111}"
 	ProjectSection(ProjectDependencies) = postProject
 		{000C9E0C-B91E-4568-B9CD-1306A904FE9A} = {000C9E0C-B91E-4568-B9CD-1306A904FE9A}
+		{739BC912-0E25-4A53-844B-7865BEE50154} = {739BC912-0E25-4A53-844B-7865BEE50154}
+		{BB642323-E560-4213-B9D8-29FED12CB71F} = {BB642323-E560-4213-B9D8-29FED12CB71F}
+		{4FAA54AA-AB7A-42B8-8B71-5C9F42FE4C93} = {4FAA54AA-AB7A-42B8-8B71-5C9F42FE4C93}
 	EndProjectSection
 EndProject
 Global

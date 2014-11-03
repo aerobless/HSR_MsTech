@@ -1,0 +1,9 @@
+﻿<Window x:Class="MVVMLab.ApplicationMainWindow"    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MVVMLab"
+    Title="M-V-VM Lab" Height="300" Width="550">
+        <Grid>
+            <local:LabContactView />
+        </Grid>
+    </Window>
