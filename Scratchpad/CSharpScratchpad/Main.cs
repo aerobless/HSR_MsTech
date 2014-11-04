@@ -13,6 +13,11 @@ namespace CSharpScratchpad
 			Parameters parameters = new Parameters ();
 			parameters.Run ();
 
+			Various various = new Various ();
+			various.Run ();
+
+			Classes classes = new Classes ();
+			classes.Run ();
 
 		}
 	}

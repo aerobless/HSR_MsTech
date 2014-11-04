@@ -21,9 +21,11 @@ namespace CSharpScratchpad
 			int i = 0;
 			gotoMarker:
 			if (i == 0) {
+				i = 1;
+				Console.Out.WriteLine ("before goto");
 				goto gotoMarker;
 			} else {
-				Console.Out.WriteLine ("omg!");
+				Console.Out.WriteLine ("after goto");
 			}
 		}
 	}
