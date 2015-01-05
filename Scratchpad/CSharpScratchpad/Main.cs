@@ -11,7 +11,7 @@ namespace CSharpScratchpad
 	{
 		static void Main (string[] args)
 		{
-
+			/*
 			Parameters parameters = new Parameters ();
 			parameters.Run ();
 
@@ -23,6 +23,9 @@ namespace CSharpScratchpad
 
 			Inheritance inheritance = new Inheritance ();
 			inheritance.Run ();
+*/
+			AbstractInheritance abstractInheritance = new AbstractInheritance ();
+			abstractInheritance.Run ();
 		}
 	}
 }
