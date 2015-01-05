@@ -73,6 +73,7 @@
     <Compile Include="Parameters.cs" />
     <Compile Include="Various.cs" />
     <Compile Include="Classes.cs" />
+    <Compile Include="Inheritance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

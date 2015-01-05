@@ -3,6 +3,7 @@ using System.Drawing;
 using MonoMac.Foundation;
 using MonoMac.AppKit;
 using MonoMac.ObjCRuntime;
+using System.Collections;
 
 namespace CSharpScratchpad
 {
@@ -10,6 +11,7 @@ namespace CSharpScratchpad
 	{
 		static void Main (string[] args)
 		{
+
 			Parameters parameters = new Parameters ();
 			parameters.Run ();
 
@@ -19,7 +21,8 @@ namespace CSharpScratchpad
 			Classes classes = new Classes ();
 			classes.Run ();
 
+			Inheritance inheritance = new Inheritance ();
+			inheritance.Run ();
 		}
 	}
 }
-
