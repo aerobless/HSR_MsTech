@@ -1,42 +1,54 @@
 ﻿using System;
-using System.Drawing;
-using MonoMac.Foundation;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
-using System.Collections;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 
-namespace Something
+namespace CSharpScratchpad
 {
-	class MainClass
+	public class Kunde
 	{
-		static void Main (string[] args)
+		public int KId { get; set; }
+
+		public string Name { get; set; }
+	}
+
+
+	public class Bestellung
+	{
+		private List<BestellItem> items = new List<BestellItem> ();
+
+		public int BId { get; set; }
+
+		public string Datum { get; set; }
+
+		public List<BestellItem> Items { get { return items; } }
+
+		public int KId { get; set; }
+
+		public void AddItem (BestellItem item)
+		{
+			Items.Add (item);
+		}
+	}
+
+	public class BestellItem
+	{
+		public int Anzahl { get; set; }
+
+		public int BId { get; set; }
+
+		public int IId { get; set; }
+
+		public double Preis { get; set; }
+
+		public string Produkt { get; set; }
+	}
+
+	public class Linq
+	{
+		public Linq ()
 		{
 			/*
-			Parameters parameters = new Parameters ();
-			parameters.Run ();
-
-			Various various = new Various ();
-			various.Run ();
-
-			Classes classes = new Classes ();
-			classes.Run ();
-
-			Inheritance inheritance = new Inheritance ();
-			inheritance.Run ();
-
-			AbstractInheritance abstractInheritance = new AbstractInheritance ();
-			abstractInheritance.Run ();
-		
-			AnonDelegateWithLambda anonDelegateWithLambda = new AnonDelegateWithLambda ();
-			anonDelegateWithLambda.Run ();*/
-
-			//EventTest test = new EventTest ();
-		
-			//string res = 'a'.ToString ();
-			//Console.WriteLine (res);
-
 			var kunden = new Kunde[] {
 				new Kunde () { KId = 1, Name = "Muster" },
 				new Kunde () { KId = 2, Name = "Schneider" }
@@ -81,20 +93,9 @@ namespace Something
 				Preis = 35.4F
 			});
 			bestellungen.Add (best);
-		
-			var q = from b in bestellungen
-			        from p in b.Items
-			        select new
-			{
-				p.Produkt,
-				PreisSumme = p.Anzahl * p.Preis
-			};
+			Console.WriteLine ("dd");
 
-			//Console.WriteLine ("\nAufgabe b)\n");
-			foreach (var foo in q) {
-				//Console.WriteLine (foo);
-			}
-
+*/
 			string[] fullNames = { "Fritz Jakob Müller", "Gabi Keller" };
 
 			IEnumerable<string> query = fullNames
@@ -102,57 +103,10 @@ namespace Something
 				.OrderBy (x => x.fName)
 				.ThenBy (x => x.name)
 				.Select (x => x.name + " came from " + x.fName);
-
-			IEnumerable<string> query2 = 
-				from fullName in fullNames
-				from name in fullName.Split ()
-				orderby fullName, name
-				select name + " came from " + fullName;
-
-			foreach (var foo in query2) {
-				Console.WriteLine (foo);
-			}
-
+				
+			Console.WriteLine ("dd");
+			Console.WriteLine (query);
 		}
 	}
-
-	public class Kunde
-	{
-		public int KId { get; set; }
-
-		public string Name { get; set; }
-	}
-
-
-	public class Bestellung
-	{
-		private List<BestellItem> items = new List<BestellItem> ();
-
-		public int BId { get; set; }
-
-		public string Datum { get; set; }
-
-		public List<BestellItem> Items { get { return items; } }
-
-		public int KId { get; set; }
-
-		public void AddItem (BestellItem item)
-		{
-			Items.Add (item);
-		}
-	}
-
-	public class BestellItem
-	{
-		public int Anzahl { get; set; }
-
-		public int BId { get; set; }
-
-		public int IId { get; set; }
-
-		public double Preis { get; set; }
-
-		public string Produkt { get; set; }
-	}
-		
 }
+

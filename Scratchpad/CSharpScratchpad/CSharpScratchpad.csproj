@@ -75,6 +75,9 @@
     <Compile Include="Classes.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="AbstractInheritance.cs" />
+    <Compile Include="AnonDelegateWithLambda.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Linq.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

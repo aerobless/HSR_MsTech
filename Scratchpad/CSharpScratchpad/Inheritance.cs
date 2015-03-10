@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace CSharpScratchpad
+namespace Something
 {
 	public class Inheritance
 	{

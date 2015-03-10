@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharpScratchpad
+namespace Something
 {
 	public class Classes
 	{
